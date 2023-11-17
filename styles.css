@@ -21,17 +21,17 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Place the background behind the container */
+    z-index: -1; 
 }
 
 h1 {
     font-size: 2.5em;
-    margin-bottom: 10px; /* Add some space below the title */
+    margin-bottom: 10px; 
     
 }
 
 h4{
-    font-size: vw;
+    font-size: 1.5vw;
     color: rgb(212, 212, 212)
 }
 
@@ -146,7 +146,7 @@ h4{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0); /* Initially transparent */
-    z-index: 3; /* Above the circle and other content */
-    transition: background 0.4s ease-in; /* Transition for fade effect */
+    background: rgba(0, 0, 0, 0); 
+    z-index: 3; 
+    transition: background 0.4s ease-in; 
 }
