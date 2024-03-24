@@ -39,7 +39,7 @@ h4{
     width: 10vh; 
     height: 3vh;
     user-select: none;
-    padding: 10px 20px;
+    padding: 1vh 2vh;
     background-color: #ffffff; 
     color: #000000; 
     text-decoration: none;
@@ -51,7 +51,7 @@ h4{
 
 .floating_text {
     font-family: "Rethink Sans", sans-serif;
-    font-size: 50px;
+    font-size: 5vh;
     position: fixed;
     top: 50%;
     left: 50%;
