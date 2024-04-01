@@ -3,7 +3,7 @@ let shapes = [];
 function setup() {
   createCanvas(windowWidth, windowHeight);
   
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 500; i++) {
     shapes.push(new Shape());
   }
 
@@ -36,9 +36,9 @@ class Shape {
     
     this.x = random(width);
     this.y = random(height);
-    this.diameter = random(1, 3);
-    this.speedX = random(1, 2);
-    this.speedY = random(0, 1);
+    this.diameter = random(0.25, 3);
+    this.speedX = random(0.1, 0.2);
+    this.speedY = random(0.015, 0.2);
     this.color = color(255, 255, 255, 255);
   }
 
