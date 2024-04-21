@@ -1,7 +1,7 @@
 let shapes = [];
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(document.body.clientWidth, document.body.clientHeight);
   
   for (let i = 0; i < 500; i++) {
     shapes.push(new Shape());
@@ -17,6 +17,16 @@ function draw() {
     shape.display();
   }
 
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  
+  // Re-initialize or update any variables or elements that depend on the canvas size
+  shapes = [];
+  for (let i = 0; i < 500; i++) {
+    shapes.push(new Shape());
+  }
 }
 
 function setGradient(x, y, w, h, c1, c2) {
