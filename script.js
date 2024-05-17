@@ -24,7 +24,7 @@ function windowResized() {
   
   // Re-initialize or update any variables or elements that depend on the canvas size
   shapes = [];
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < 100; i++) {
     shapes.push(new Shape());
   }
 }
@@ -91,98 +91,38 @@ class Shape {
 }
 
 
-//Click functionality ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// Click functionality
 
 const meButton = document.getElementById('mebut');
 const projButton = document.getElementById('projbut');
 const contButton = document.getElementById('contbut');
-const backButton = document.getElementById('back-button');
 const expButton = document.getElementById('expbut');
 const pewcontainer = document.getElementById('pewcontainer');
 const container = document.getElementById('container');
 const intcontainer = document.getElementById('indtext-container');
 const floating_name = document.getElementById('floating_text');
 
-//fade in for pewcontainers
+// Fade-in effect for pewcontainer
 window.addEventListener('load', function() {
-  
   pewcontainer.classList.add('fade-in-active');
 });
 
-
-meButton.addEventListener('click',()=>{
-
-    setTimeout(function () {
-        
-        container.style.opacity = 0;
-        
-        floating_name.style.opacity = 0;
+function navigate(button, url, elements) {
+  button.addEventListener('click', () => {
+    setTimeout(() => {
+      elements.forEach(el => el.style.opacity = 0);
     }, 100);
 
     setTimeout(() => {
-        window.location.href = 'me.html';
-        
-    }, 1500); // 3000 milliseconds (3 seconds)
+      window.location.href = url;
+    }, 1500);
+  });
+}
 
-    pewcontainer.style.opacity = 1;
-    
-});
-
-
-
-expButton.addEventListener('click',()=>{
-
-    setTimeout(function () {
-       
-        intcontainer.style.opacity = 0;
-       
-        floating_name.style.opacity = 0;
-        
-    }, 100);
-
-    setTimeout(() => {
-        window.location.href = 'experience.html';
-    }, 1500); // 3000 milliseconds (3 seconds)
-
-});
-
-
-
-projButton.addEventListener('click', function(event) {
-      
-    setTimeout(function () {
-       
-        container.style.opacity = 0;
-        floating_name.style.opacity = 0;
-        pewcontainer.style.opacity = 1
-        
-    }, 100);
-
-        setTimeout(() => {
-            window.location.href = 'projects.html'; 
-        }, 1500); // 3000 milliseconds (3 seconds)
-    
-});
-
-contButton.addEventListener('click',()=>{
-
-    setTimeout(function () {
-    
-      
-        container.style.opacity = 0;
-        floating_name.style.opacity = 0;
-        
-    }, 100);
-
-    setTimeout(() => {
-        window.location.href = 'contact.html';
-        
-    }, 1500); // 3000 milliseconds (3 seconds)
-    
-
-    
-});
-
+navigate(meButton, 'me.html', [container, floating_name]);
+navigate(expButton, 'experience.html', [intcontainer, floating_name]);
+navigate(projButton, 'projects.html', [container, floating_name, pewcontainer]);
+navigate(contButton, 'contact.html', [container, floating_name]);
 
 
 
